@@ -121,15 +121,32 @@ Mô hình TCP/IP có bốn lớp sau:
 
 - Kiểm soát các giao thức lớp cao, các chủ đề về trình bày, biểu diễn thông tin, mã hóa và điều khiển hội thoại. Bộ giao thức TCP/IP tổ hợp tất cả các ứng dụng liên quan đến các chủ đề vào trong một lớp và đảm bảo số liệu này được đóng gói thích hợp trước khi chuyển nó đến lớp kế tiếp. TCP/IP không chỉ chứa các đặc tả về lớp Internet và lớp vận chuyển, như IP và TCP, mà còn đặc tả cho các ứng dụng phổ biến. TCP/IP có các giao thức để hỗ trợ truyền file, e-mail và remote login, thêm vào các ứng dụng sau đây:
 
-###2.1.1 File Transfer Protocol (FTP): FTP là một dịch vụ có tạo cầu nối (connection-oriented) tin cậy, nó sử dụng TCP để truyền các tập tin giữa các hệ thống có hỗ trợ FTP. Nó hỗ trợ truyền file nhị phân hai chiều và tải các file ASCII.
+###2.1.1 File Transfer Protocol (FTP)
 
-###2.1.2 Trivial File Transfer Protocol (TFTP): TFTP là một dịch vụ không tạo cầu nối (connectionless) dùng UDP (User Datagram Protocol). TFTP được dùng trên router để truyền các file cấu hình và các Cisco IOS image và để truyền các file giữa các hệ thống hỗ trợ TFTP. Nó hữu dụng trong một vài LAN bởi nó hoạt động nhanh hơn FTP trong một môi trường ổn định.
+- FTP là một dịch vụ có tạo cầu nối (connection-oriented) tin cậy, nó sử dụng TCP để truyền các tập tin giữa các hệ thống có hỗ trợ FTP. Nó hỗ trợ truyền file nhị phân hai chiều và tải các file ASCII.
 
-###2.1.3 Network File System (NFS): NFS là một bộ giao thức hệ thống file phân tán được phát triển bởi Sun Microsystems cho phép truy xuất file đến các thiết bị lưu trữ ở xa như một đĩa cứng qua mạng.
-Simple Mail Transfer Protocol (SMTP): SMTP quản lý hoạt động truyền e-mail qua mạng máy tính. Nó không hỗ trợ truyền dạng số liệu nào khác hơn là plaintext.
-###2.1.4 Terminal emulation (Telnet): Telnet cung cấp khả năng truy nhập từ xa vào máy tính khác. Nó cho phép một user đăng nhập vào một Internet host và thực thi các lệnh. Một Telnet client được xem như một host cục bộ. Một Telnet server được xem như một host ở xa.
-###2.1.5 Simple Network Management Protocol (SNMP): SNMP là một giao thức cung cấp một phương pháp để giám sát và điều khiển các thiết bị mạng và để quản lý các cấu hình, thu thập thống kê, hiệu suất và bảo mật.
-###2.1.6 Domain Name System (DNS): DNS là một hệ thống được dùng trên Internet để thông dịch tên của các miền (domain) và các node mạng được quảng cáo công khai sang các địa chỉ IP.
+###2.1.2 Trivial File Transfer Protocol (TFTP)
+
+- TFTP là một dịch vụ không tạo cầu nối (connectionless) dùng UDP (User Datagram Protocol). TFTP được dùng trên router để truyền các file cấu hình và các Cisco IOS image và để truyền các file giữa các hệ thống hỗ trợ TFTP. Nó hữu dụng trong một vài LAN bởi nó hoạt động nhanh hơn FTP trong một môi trường ổn định.
+
+###2.1.3 Network File System (NFS)
+
+- NFS là một bộ giao thức hệ thống file phân tán được phát triển bởi Sun Microsystems cho phép truy xuất file đến các thiết bị lưu trữ ở xa như một đĩa cứng qua mạng.
+###2.1.4 Simple Mail Transfer Protocol (SMTP)
+
+- SMTP quản lý hoạt động truyền e-mail qua mạng máy tính. Nó không hỗ trợ truyền dạng số liệu nào khác hơn là plaintext.
+
+###2.1.5 Terminal emulation (Telnet)
+
+- Telnet cung cấp khả năng truy nhập từ xa vào máy tính khác. Nó cho phép một user đăng nhập vào một Internet host và thực thi các lệnh. Một Telnet client được xem như một host cục bộ. Một Telnet server được xem như một host ở xa.
+
+###2.1.6 Simple Network Management Protocol (SNMP)
+
+- SNMP là một giao thức cung cấp một phương pháp để giám sát và điều khiển các thiết bị mạng và để quản lý các cấu hình, thu thập thống kê, hiệu suất và bảo mật.
+
+###2.1.7 Domain Name System (DNS)
+
+- DNS là một hệ thống được dùng trên Internet để thông dịch tên của các miền (domain) và các node mạng được quảng cáo công khai sang các địa chỉ IP.
 
 
 ##2.2 Lớp vận chuyển.
@@ -180,7 +197,27 @@ Xác định các địa chỉ IP khi biết trước địa chỉ MAC.
 
 ##2.4 Lớp truy nhập mạng.
 
+- Lớp truy nhập mạng cũng còn được gọi là lớp host-to-network. Lớp này liên quan đến tất cả các chủ đề mà gói IP cần để thực sự tạo ra một liên kết vật lý đến môi trường truyền của mạng. Nó bao gồm các chi tiết của công nghệ LAN và WAN và tất cả các chi tiết được chứa trong lớp vật lý và lớp liên kết số liệu của mô hình OSI các driver cho các ứng dụng, các modem card và các thiết bị khác hoạt động tại lớp truy nhập mạng này. 
+- Các tiêu chuẩn giao thức modem như SLIP (Serial Line Internet Protocol) và PPP (Point-to-Point) cung cấp truy xuất mạng thông qua một kênh kết nối dùng modem. Bởi sự ảnh hưởng qua lại khá rắc rối của phần cứng, phần mềm và đặc tả môi trường truyền, nên có nhiều giao thức hoạt động tại lớp này. Điều này có thể dẫn đến sự rối rắm cho người dùng. Hầu hết các giao thức được công nhận hoạt động tại lớp vận chuyển và lớp Internet của mô hình TCP/IP.
 
-
+- Các chức năng của lớp truy nhập mạng bao gồm ánh xạ địa chỉ IP sang địa chỉ vật lý và đóng gói (encapsulation) các gói IP thành các frame. Căn cứ vào dạng phần cứng và giao tiếp mạng, lớp truy nhập mạng sẽ xác lập kết nối với đường truyền vật lý của mạng.
 
 #3. So sánh mô hình OSI và mô hình TCP/IP
+
+##3.1 Giống nhau
+<ul>
+<li>Cả hai đều phân lớp.</li>
+<li>Cả hai đều có lớp ứng dụng, từ đó chúng có thể có các dịch vụ rất khác biệt.</li>
+<li>Cả hai đều có lớp mạng và lớp vận chuyển gần giống nhau.</li>
+<li>Các chuyên viên mạng đều phải hiểu biết cả hai mô hình này.</li>
+<li>Cả hai đều cho các gói được chuyển mạch. Các gói riêng biệt có thể đi theo các đường dẫn độc lập để đến cùng một đích.</li>
+</ul> 
+
+##3.2 Khác nhau
+
+<ul>
+<li>TCP/IP kết hợp lớp trình bày và lớp phiên vào lớp ứng dụng.</li>
+<li>TCP/IP kết hợp các lớp liên kết dữ liệu và lớp vật lý thành lớp truy nhập mạng.</li>
+<li>TCP/IP đơn giản hơn vì có ít lớp hơn.</li>
+<li>Các giao thức TCP/IP là các tiêu chuẩn mà Internet dùng để phát triển, như vậy mô hình TCP/IP có được sự tín nhiệm chỉ bởi các giao thức của nó.</li>
+</ul>
