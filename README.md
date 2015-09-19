@@ -113,4 +113,74 @@ Mô hình tham chiếu OSI được chia thành bảy lớp với các chức n�
 
 #2. Mô hình TCP/IP
 
+- Chuẩn mang tính kỹ thuật và lịch sử của Internet là mô hình TCP/IP. Bộ quốc phòng Hoa Kỳ (DoD: Department of Defense) đã tạo ra mô hình DoD là tiền thân của mô hình TCP/IP, bởi họ muốn thiết kế một mạng có thể tồn tại dưới bất kỳ hoàn cảnh nào, ngay cả cuộc chiến tranh hạt nhân. Trong một thế giới được kết nối bằng các loại đường truyền khác nhau như cáp đồng trục, sóng vi ba, cáp sợi quang và các liên kết vệ tinh, DoD muốn truyền dẫn các gói vào mọi lúc dưới bất kỳ điều kiện nào. Bài toán thiết kế rất khác biệt này đã dẫn đến sự phát minh ra mô hình TCP/IP.
+
+Mô hình TCP/IP có bốn lớp sau:
+
+##2.1 Lớp ứng dụng.
+
+- Kiểm soát các giao thức lớp cao, các chủ đề về trình bày, biểu diễn thông tin, mã hóa và điều khiển hội thoại. Bộ giao thức TCP/IP tổ hợp tất cả các ứng dụng liên quan đến các chủ đề vào trong một lớp và đảm bảo số liệu này được đóng gói thích hợp trước khi chuyển nó đến lớp kế tiếp. TCP/IP không chỉ chứa các đặc tả về lớp Internet và lớp vận chuyển, như IP và TCP, mà còn đặc tả cho các ứng dụng phổ biến. TCP/IP có các giao thức để hỗ trợ truyền file, e-mail và remote login, thêm vào các ứng dụng sau đây:
+
+###2.1.1 File Transfer Protocol (FTP): FTP là một dịch vụ có tạo cầu nối (connection-oriented) tin cậy, nó sử dụng TCP để truyền các tập tin giữa các hệ thống có hỗ trợ FTP. Nó hỗ trợ truyền file nhị phân hai chiều và tải các file ASCII.
+
+###2.1.2 Trivial File Transfer Protocol (TFTP): TFTP là một dịch vụ không tạo cầu nối (connectionless) dùng UDP (User Datagram Protocol). TFTP được dùng trên router để truyền các file cấu hình và các Cisco IOS image và để truyền các file giữa các hệ thống hỗ trợ TFTP. Nó hữu dụng trong một vài LAN bởi nó hoạt động nhanh hơn FTP trong một môi trường ổn định.
+
+###2.1.3 Network File System (NFS): NFS là một bộ giao thức hệ thống file phân tán được phát triển bởi Sun Microsystems cho phép truy xuất file đến các thiết bị lưu trữ ở xa như một đĩa cứng qua mạng.
+Simple Mail Transfer Protocol (SMTP): SMTP quản lý hoạt động truyền e-mail qua mạng máy tính. Nó không hỗ trợ truyền dạng số liệu nào khác hơn là plaintext.
+###2.1.4 Terminal emulation (Telnet): Telnet cung cấp khả năng truy nhập từ xa vào máy tính khác. Nó cho phép một user đăng nhập vào một Internet host và thực thi các lệnh. Một Telnet client được xem như một host cục bộ. Một Telnet server được xem như một host ở xa.
+###2.1.5 Simple Network Management Protocol (SNMP): SNMP là một giao thức cung cấp một phương pháp để giám sát và điều khiển các thiết bị mạng và để quản lý các cấu hình, thu thập thống kê, hiệu suất và bảo mật.
+###2.1.6 Domain Name System (DNS): DNS là một hệ thống được dùng trên Internet để thông dịch tên của các miền (domain) và các node mạng được quảng cáo công khai sang các địa chỉ IP.
+
+
+##2.2 Lớp vận chuyển.
+
+- Lớp vận chuyển cung ứng dịch vụ vận chuyển từ host nguồn đến host đích. Lớp vận chuyển thiết lập một cầu nối logic giữa các đầu cuối của mạng, giữa host truyền và host nhận. Giao thức vận chuyển phân chia và tái thiết lập dữ liệu của các ứng dụng lớp trên thành luồng dữ liệu giống nhau giữa các đầu cuối. Luồng dữ liệu của lớp vận chuyển cung cấp các dịch vụ truyền tải từ đầu cuối này đến đầu cuối kia của mạng.
+
+- Lớp này vận chuyển gửi các gói từ nguồn đến đích qua mạng internet. Điều khiển end-to-end, được cung cấp bởi cửa sổ trượt (sliding windows) và tính tin cậy trong các số tuần tự và sự báo nhận, là nhiệm vụ then chốt của lớp vận chuyển khi dùng TCP. Lớp vận chuyển cũng định nghĩa kết nối end-to-end giữa các ứng dụng của host. Các dịch vụ vận chuyển bao gồm tất cả các dịch vụ sau đây:
+
+###2.2.1 TCP
+
+Thiết lập các hoạt động end-to-end.
+Cửa sổ trượt cung cấp điều khiển luồng.
+Chỉ số tuần tự và báo nhận cung cấp độ tin cậy cho hoạt động
+
+###2.2.2 UDP
+ 
+Phân đoạn dữ liệu ứng dụng lớp trên.
+Truyền các segment từ một thiết bị đầu cuối này đến thiết bị đầu cuối khác.
+
+##2.3 Lớp Internet.
+
+- Chọn một đường dẫn tốt nhất đi qua mạng cho các gói di chuyển tới đích. Giao thức chính hoạt động tại lớp này là Internet Protocol (IP). Sự xác định đường dẫn tốt nhất và chuyển mạch gói diễn ra tại lớp này.
+
+Các giao thức sau đây hoạt động tại lớp Internet của mô hình TCP/IP.
+
+###2.3.1 IP 
+
+Cung cấp connectionless, định tuyến chuyển phát gói theo best-offort. IP không quan tâm đến nội dung của các gói nhưng tìm kiếm đường đẫn cho gói tới đích.
+
+Thực hiện các nhiệm vụ chính sau:
+<ul>
+<li>Định nghĩa một gói là một lược đồ đánh địa chỉ.</li>
+<li>Trung chuyển số liệu giữa lớp Internet và lớp truy nhập mạng.</li>
+<li>Định tuyến chuyển các gói đến host ở xa.</li>
+</ul>
+
+###2.3.2 ICMP (Internet Control Message Protocol)
+
+Cung cấp khả năng điều khiển và chuyển thông điệp.
+
+###2.3.3 ARP (Address Resolution Protocol)
+
+Xác định địa chỉ lớp liên kết số liệu (MAC address) khi đã biết trước địa chỉ IP.
+
+###2.3.4 RARP (Reverse Address Resolution Protocol) 
+
+Xác định các địa chỉ IP khi biết trước địa chỉ MAC.
+
+##2.4 Lớp truy nhập mạng.
+
+
+
+
 #3. So sánh mô hình OSI và mô hình TCP/IP
