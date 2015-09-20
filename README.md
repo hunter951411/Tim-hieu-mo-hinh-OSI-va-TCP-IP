@@ -116,11 +116,13 @@ Mô hình tham chiếu OSI được chia thành bảy lớp với các chức n�
 - Chuẩn mang tính kỹ thuật và lịch sử của Internet là mô hình TCP/IP. Bộ quốc phòng Hoa Kỳ (DoD: Department of Defense) đã tạo ra mô hình DoD là tiền thân của mô hình TCP/IP, bởi họ muốn thiết kế một mạng có thể tồn tại dưới bất kỳ hoàn cảnh nào, ngay cả cuộc chiến tranh hạt nhân. Trong một thế giới được kết nối bằng các loại đường truyền khác nhau như cáp đồng trục, sóng vi ba, cáp sợi quang và các liên kết vệ tinh, DoD muốn truyền dẫn các gói vào mọi lúc dưới bất kỳ điều kiện nào. Bài toán thiết kế rất khác biệt này đã dẫn đến sự phát minh ra mô hình TCP/IP.
 
 Mô hình TCP/IP có bốn lớp sau:
+
 |  TCP/IP  |
 |----------|
 | Application |
+| Transport |
 | Internet |
-| |
+| Network Interface |
 
 ##2.1 Lớp ứng dụng.
 
