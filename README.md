@@ -1,6 +1,3 @@
-# Tim-hieu-mo-hinh-OSI-va-TCP-IP
-Mô hình OSI, mô hình TCP/IP và sự khác biệt giữa chúng
-
 #1. Mô Hình OSI (Open Systems Interconnection Reference Model)
 
 - Mô hình OSI (OpenSystemInterconnection): là mô hình được tổ chức ISO đề xuất từ 1977 và công bố lần đầu vào 1984. Để các máy tính và các thiết bị mạng có thể truyền thông với nhau phải có những qui tắc giao tiếp được các bên chấp nhận. Mô hình OSI là một khuôn mẫu giúp chúng ta hiểu dữ liệu đi xuyên qua mạng như thế nào đồng thời cũng giúp chúng ta hiểu được các chức năng mạng diễn ra tại mỗi lớp.
